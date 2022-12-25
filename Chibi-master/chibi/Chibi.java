@@ -1,4 +1,4 @@
-package pacmen;
+package chibi;
 
 import javax.swing.JFrame;
 import menu.Menu;
