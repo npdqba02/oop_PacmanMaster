@@ -1,6 +1,7 @@
-package chibi;
+package pacmen;
 
 import javax.swing.JFrame;
+import menu.Menu;
 
 public class Chibi extends JFrame{
 
@@ -13,12 +14,7 @@ public class Chibi extends JFrame{
 	
 	
 	public static void main(String[] args) {
-		Chibi chib = new Chibi();
-		chib.setVisible(true);
-		chib.setTitle("Chibi");
-		chib.setSize(380,420);
-		chib.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		chib.setLocationRelativeTo(null);
+            Menu menu = new Menu();
 		
 	}
 
