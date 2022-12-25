@@ -13,10 +13,10 @@ import java.awt.event.ActionListener;
 
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
-import Chibi.Model;
+import chibi.Model;
 import chibi.Chibi;
 import javax.swing.JTextArea;
-import pacmen.Chibi;
+
 
  
 /**

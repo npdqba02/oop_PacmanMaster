@@ -1,4 +1,4 @@
-package pacmen;
+package chibi;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
