@@ -10,7 +10,6 @@ public class Pacman extends JFrame{
 	
 	
 	public static void main(String[] args) {
-		Menu menu = new Menu();
 		Pacman pac = new Pacman();
 		pac.setVisible(true);
 		pac.setTitle("Pacman");
