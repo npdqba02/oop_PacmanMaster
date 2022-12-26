@@ -50,12 +50,12 @@ public class Menu {
         @Override
         public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                Chibi chib = new Chibi();
-		chib.setVisible(true);
-		chib.setTitle("Chibi");
-		chib.setSize(380,420);
-		chib.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		chib.setLocationRelativeTo(null);
+                Pacman pac = new Pacman();
+		    pac.setVisible(true);
+		    pac.setTitle("Pacman");
+		    pac.setSize(380,420);
+		    pac.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		    pac.setLocationRelativeTo(null);
             }
         });
         
