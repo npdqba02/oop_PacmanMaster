@@ -1,12 +1,8 @@
 package pacman;
-
 import javax.swing.JFrame;
-import menu.Menu;
+
 
 public class Pacman extends JFrame{
-
-	private static final long serialVersionUID = 1L;
-
 
 	public Pacman() {
 		add(new Model());
@@ -14,7 +10,12 @@ public class Pacman extends JFrame{
 	
 	
 	public static void main(String[] args) {
-            Menu menu = new Menu();
+		Pacman pac = new Pacman();
+		pac.setVisible(true);
+		pac.setTitle("Pacman");
+		pac.setSize(380,420);
+		pac.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		pac.setLocationRelativeTo(null);
 		
 	}
 

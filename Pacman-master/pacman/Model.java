@@ -11,7 +11,7 @@ import javax.swing.Timer;
 
 public class Model extends JPanel implements ActionListener {
 
-    private Dimension d;
+	private Dimension d;
     private final Font smallFont = new Font("Arial", Font.BOLD, 14);
     private boolean inGame = false;
     private boolean dying = false;
@@ -69,14 +69,14 @@ public class Model extends JPanel implements ActionListener {
     }
     
     private void loadImages() {
-    	down = new ImageIcon(".Pacman-master/images/down.gif").getImage();
-    	up = new ImageIcon(".Pacman-master/images/up.gif").getImage();
-    	left = new ImageIcon(".Pacman-master/images/left.gif").getImage();
-    	right = new ImageIcon(".Pacman-master/images/right.gif").getImage();
-        menu = new ImageIcon(".Pacman-master/images/menu.gif").getImage();
-        ghost_red = new ImageIcon(".Pacman-master/images/ghost_red.gif").getImage();
-        heart = new ImageIcon(".Pacman-master/images/heart.png").getImage();
-        decor = new ImageIcon(".Pacman-master/images/decor.gif").getImage();
+    	down = new ImageIcon("./images/down.gif").getImage();
+    	up = new ImageIcon("./images/up.gif").getImage();
+    	left = new ImageIcon("./images/left.gif").getImage();
+    	right = new ImageIcon("./images/right.gif").getImage();
+        menu = new ImageIcon("./images/menu.gif").getImage();
+        ghost_red = new ImageIcon("./images/ghost_red.gif").getImage();
+        heart = new ImageIcon("./images/heart.png").getImage();
+        decor = new ImageIcon("./images/decor.gif").getImage();
     }
     private void initVariables() {
 
@@ -312,7 +312,7 @@ public class Model extends JPanel implements ActionListener {
         for (y = 0; y < SCREEN_SIZE; y += BLOCK_SIZE) {
             for (x = 0; x < SCREEN_SIZE; x += BLOCK_SIZE) {
 
-                g2d.setColor(new Color(19,53,191));
+                g2d.setColor(new Color(238,20,238));
                 g2d.setStroke(new BasicStroke(5));
                 
                 if ((levelData[i] == 0)) { 
@@ -388,8 +388,8 @@ public class Model extends JPanel implements ActionListener {
 
         pacman_x = 7 * BLOCK_SIZE;  //start position
         pacman_y = 7 * BLOCK_SIZE;
-        pacman_x = 0;	//reset direction move
-        pacman_y = 0;
+        pacmand_x = 0;	//reset direction move
+        pacmand_y = 0;
         req_dx = 0;		// reset direction controls
         req_dy = 0;
         dying = false;
@@ -401,7 +401,7 @@ public class Model extends JPanel implements ActionListener {
         //create screen
         Graphics2D g2d = (Graphics2D) g;
 
-        g2d.setColor(Color.black);
+        g2d.setColor(Color.DARK_GRAY);
         g2d.fillRect(0, 0, d.width, d.height);
 
         drawMaze(g2d);
