@@ -30,7 +30,7 @@ public class Model extends JPanel implements ActionListener {
     private Image heart, ghost_red;
     private Image up, down, left, right, menu, decor;
 
-    private int pacman_x, pacman_y, pacmand_x, pacmand_y;
+    private int chibi_x, chibi_y, chibid_x, chibid_y;
     private int req_dx, req_dy;
 
     //map
@@ -69,14 +69,14 @@ public class Model extends JPanel implements ActionListener {
     }
     
     private void loadImages() {
-    	down = new ImageIcon("./images/down.gif").getImage();
-    	up = new ImageIcon("./images/up.gif").getImage();
-    	left = new ImageIcon("./images/left.gif").getImage();
-    	right = new ImageIcon("./images/right.gif").getImage();
-        menu = new ImageIcon("./images/menu.gif").getImage();
-        ghost_red = new ImageIcon("./images/ghost_red.gif").getImage();
-        heart = new ImageIcon("./images/heart.png").getImage();
-        decor = new ImageIcon("./images/decor.gif").getImage();
+    	down = new ImageIcon(".Chibi-master/images/down.png").getImage();
+    	up = new ImageIcon(".Chibi-master/images/up.png").getImage();
+    	left = new ImageIcon(".Chibi-master/images/left.png").getImage();
+    	right = new ImageIcon(".Chibi-master/images/right.png").getImage();
+        menu = new ImageIcon(".Chibi-master/images/menu.gif").getImage();
+        ghost_red = new ImageIcon(".Chibi-master/images/ghost_red.gif").getImage();
+        heart = new ImageIcon(".Chibi-master/images/heart.png").getImage();
+        decor = new ImageIcon(".Chibi-master/images/decor.gif").getImage();
     }
     private void initVariables() {
 
@@ -102,7 +102,7 @@ public class Model extends JPanel implements ActionListener {
 
         } else {
 
-            movePacman();
+            moveChibi();
             drawPacman(g2d);
             moveGhosts(g2d);
             checkMaze();
@@ -239,8 +239,8 @@ public class Model extends JPanel implements ActionListener {
             ghost_y[i] = ghost_y[i] + (ghost_dy[i] * ghostSpeed[i]);
             drawGhost(g2d, ghost_x[i] + 1, ghost_y[i] + 1);
 
-            if (pacman_x > (ghost_x[i] - 12) && pacman_x < (ghost_x[i] + 12)
-                    && pacman_y > (ghost_y[i] - 12) && pacman_y < (ghost_y[i] + 12)
+            if (chibi_x > (ghost_x[i] - 12) && chibi_x < (ghost_x[i] + 12)
+                    && chibi_y > (ghost_y[i] - 12) && chibi_y < (ghost_y[i] + 12)
                     && inGame) {
 
                 dying = true;
@@ -253,13 +253,13 @@ public class Model extends JPanel implements ActionListener {
     	g2d.drawImage(ghost_red, x, y, this);
         }
 
-    private void movePacman() {
+    private void moveChibi() {
 
         int pos;
         short ch;
 
-        if (pacman_x % BLOCK_SIZE == 0 && pacman_y % BLOCK_SIZE == 0) {
-            pos = pacman_x / BLOCK_SIZE + N_BLOCKS * (int) (pacman_y / BLOCK_SIZE);
+        if (chibi_x % BLOCK_SIZE == 0 && chibi_y % BLOCK_SIZE == 0) {
+            pos = chibi_x / BLOCK_SIZE + N_BLOCKS * (int) (chibi_y / BLOCK_SIZE);
             ch = screenData[pos];
 
             //increase score
@@ -273,34 +273,34 @@ public class Model extends JPanel implements ActionListener {
                         || (req_dx == 1 && req_dy == 0 && (ch & 4) != 0)
                         || (req_dx == 0 && req_dy == -1 && (ch & 2) != 0)
                         || (req_dx == 0 && req_dy == 1 && (ch & 8) != 0))) {
-                    pacmand_x = req_dx;
-                    pacmand_y = req_dy;
+                    chibid_x = req_dx;
+                    chibid_y = req_dy;
                 }
             }
 
             // Check for standstill
-            if ((pacmand_x == -1 && pacmand_y == 0 && (ch & 1) != 0)
-                    || (pacmand_x == 1 && pacmand_y == 0 && (ch & 4) != 0)
-                    || (pacmand_x == 0 && pacmand_y == -1 && (ch & 2) != 0)
-                    || (pacmand_x == 0 && pacmand_y == 1 && (ch & 8) != 0)) {
-                pacmand_x = 0;
-                pacmand_y = 0;
+            if ((chibid_x == -1 && chibid_y == 0 && (ch & 1) != 0)
+                    || (chibid_x == 1 && chibid_y == 0 && (ch & 4) != 0)
+                    || (chibid_x == 0 && chibid_y == -1 && (ch & 2) != 0)
+                    || (chibid_x == 0 && chibid_y == 1 && (ch & 8) != 0)) {
+                chibid_x = 0;
+                chibid_y = 0;
             }
         } 
-        pacman_x = pacman_x + PACMAN_SPEED * pacmand_x;
-        pacman_y = pacman_y + PACMAN_SPEED * pacmand_y;
+        chibi_x = chibi_x + PACMAN_SPEED * chibid_x;
+        chibi_y = chibi_y + PACMAN_SPEED * chibid_y;
     }
 
     private void drawPacman(Graphics2D g2d) {
 
         if (req_dx == -1) {
-        	g2d.drawImage(left, pacman_x + 1, pacman_y + 1, this);
+        	g2d.drawImage(left, chibi_x + 1, chibi_y + 1, this);
         } else if (req_dx == 1) {
-        	g2d.drawImage(right, pacman_x + 1, pacman_y + 1, this);
+        	g2d.drawImage(right, chibi_x + 1, chibi_y + 1, this);
         } else if (req_dy == -1) {
-        	g2d.drawImage(up, pacman_x + 1, pacman_y + 1, this);
+        	g2d.drawImage(up, chibi_x + 1, chibi_y + 1, this);
         } else {
-        	g2d.drawImage(down, pacman_x + 1, pacman_y + 1, this);
+        	g2d.drawImage(down, chibi_x + 1, chibi_y + 1, this);
         }
     }
 
@@ -386,10 +386,10 @@ public class Model extends JPanel implements ActionListener {
             ghostSpeed[i] = validSpeeds[random];
         }
 
-        pacman_x = 7 * BLOCK_SIZE;  //start position
-        pacman_y = 7 * BLOCK_SIZE;
-        pacmand_x = 0;	//reset direction move
-        pacmand_y = 0;
+        chibi_x = 7 * BLOCK_SIZE;  //start position
+        chibi_y = 7 * BLOCK_SIZE;
+        chibi_x = 0;	//reset direction move
+        chibi_y = 0;
         req_dx = 0;		// reset direction controls
         req_dy = 0;
         dying = false;
