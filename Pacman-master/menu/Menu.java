@@ -13,9 +13,11 @@ import java.awt.event.ActionListener;
 
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
-import chibi.Model;
-import chibi.Chibi;
+
 import javax.swing.JTextArea;
+
+import pacman.Pacman;
+import pacman.Model;
 
 
  

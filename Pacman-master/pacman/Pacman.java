@@ -1,14 +1,14 @@
-package chibi;
+package pacman;
 
 import javax.swing.JFrame;
 import menu.Menu;
 
-public class Chibi extends JFrame{
+public class Pacman extends JFrame{
 
 	private static final long serialVersionUID = 1L;
 
 
-	public Chibi() {
+	public Pacman() {
 		add(new Model());
 	}
 	
