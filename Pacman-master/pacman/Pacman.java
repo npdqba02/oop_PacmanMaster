@@ -1,5 +1,6 @@
-package pacman;
+package pacmen;
 import javax.swing.JFrame;
+import menu.Menu;
 
 
 public class Pacman extends JFrame{
@@ -10,12 +11,8 @@ public class Pacman extends JFrame{
 	
 	
 	public static void main(String[] args) {
-		Pacman pac = new Pacman();
-		pac.setVisible(true);
-		pac.setTitle("Pacman");
-		pac.setSize(380,420);
-		pac.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		pac.setLocationRelativeTo(null);
+		Menu menu = new Menu();
+		
 	}
 
 }
