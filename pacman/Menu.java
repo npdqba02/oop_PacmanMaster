@@ -1,32 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package src.menu;
+package pacman;
 
 import java.awt.*;
 import java.awt.Button;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
-import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
-import pacman.Model;
-import pacman.Pacman;
 
-/**
- *
- * @author asus
- */
-public class Menu {
+import javax.swing.JFrame;
+
+
+
+public class Menu extends JFrame{
     Frame frame;
     Button buttonStart;
     Button buttonExit;
-    private Image decor;
-    private Image heart, menu;
 
-    public Menu() {
-        frame = new Frame("Trò chơi Chibi-pacman");
+
+    public Menu()  {
+        frame = new Frame("Pacman");
         frame.setBackground(Color.PINK);
 
         buttonStart = new Button("Start");
@@ -50,6 +41,7 @@ public class Menu {
         buttonExit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
+    
             }
         });
 
