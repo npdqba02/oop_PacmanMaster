@@ -12,3 +12,9 @@ POWERPOINT: https://www.canva.com/design/DAFWBpkOdhE/QUYAxWzZhxy4tV8sekcqAw/edit
 
 
 REPORT PROJECT: https://docs.google.com/document/d/1NwEnvu0aOltpWbnAVBPDnxNfQCknYhTWGKh8ehL-7Jg/edit
+
+TEAM MEMBERS: 1.Nguyễn Phạm Diễm Quỳnh ID: ITITIU20290
+              2. Đinh Việt Anh         ID: ITITIU20153
+              3. Trương Quang Tường    ID: ITITIU20130
+
+
