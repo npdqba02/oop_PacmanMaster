@@ -1,4 +1,4 @@
-package pacman;
+package src.pacman;
 
 import javax.swing.JFrame;
 import menu.Menu;
